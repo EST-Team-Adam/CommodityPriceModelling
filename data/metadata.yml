@@ -3,3 +3,4 @@ end_date: 2016-01-01
 exchange_rates:
   - USD/EUR
   - USD/JPY
+igc_link: http://www.igc.int/en/grainsupdate/igc_goi.xlsb
