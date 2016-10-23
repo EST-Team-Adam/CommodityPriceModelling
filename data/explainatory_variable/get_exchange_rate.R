@@ -1,5 +1,6 @@
 library(yaml)
 library(quantmod)
+library(feather)
 
 ## Read metadata
 metadata = yaml.load_file("../metadata.yml")
@@ -36,3 +37,6 @@ exchange_rate.df =
                           from = start_date,
                           to = end_date)
          )
+
+## Save the data
+write_feather(exchange_rate.df, path = "exchange_rate.feather")
