@@ -17,7 +17,8 @@ igc.df = read.csv(file = "igc_goi.csv", stringsAsFactor = FALSE)
 processed_igc.df =
     igc.df %>%
     select(., select = -X) %>%
-    mutate(., date = as.Date(date, format = "%m/%d/%Y"))
+    mutate(., date = as.Date(date, format = "%m/%d/%Y")) %>%
+    subset(., date >= metadata$start_date & date <= metadata$end_date)
 
 ## Save the processed data back as feather format
 write_feather(processed_igc.df, path = "processed_igc.feather")
